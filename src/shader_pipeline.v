@@ -21,7 +21,7 @@ module shader_pipeline (
 
    // === Instruction Memory === 
 
-   shader_program program (
+   shader_program prog (
       .clk(clk),
       .rst(rst),
       .pc(pc),
