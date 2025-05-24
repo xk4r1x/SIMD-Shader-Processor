@@ -44,5 +44,3 @@ Use GTKWave with `shader_pipeline_tb.vcd` to view simulation.
 
 ## Author
 Makari Green  
-```verilog
-```
