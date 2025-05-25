@@ -42,7 +42,7 @@ module simd_alu (
    wire [7:0] r0 = (mask[0]) ? alu_lane(a0, b0, op) : 8'b0;
    wire [7:0] r1 = (mask[1]) ? alu_lane(a1, b1, op) : 8'b0;
    wire [7:0] r2 = (mask[2]) ? alu_lane(a2, b2, op) : 8'b0;
-   wire [7:0] r3 = (mask[3]) ? alu_lane(a3, b3, op) : 8b0;
+   wire [7:0] r3 = (mask[3]) ? alu_lane(a3, b3, op) : 8'b0;
    
 
 
