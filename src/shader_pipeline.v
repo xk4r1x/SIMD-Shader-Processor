@@ -1,5 +1,6 @@
 module shader_pipeline (
-   input       clk,  
+   input       clk,
+   input       rst,
 );
    
    // Program Counter
