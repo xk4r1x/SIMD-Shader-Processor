@@ -4,6 +4,7 @@ module shader_pipeline_tb (
       // Inputs
       reg clk,
       reg rst
+);
       
       //Instantiate the DUT 
       shader_pipeline dut (
@@ -39,6 +40,4 @@ module shader_pipeline_tb (
          end
          $finish; // End simulation
       end        
-);
-   
 endmodule
