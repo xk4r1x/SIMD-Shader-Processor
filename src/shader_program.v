@@ -27,32 +27,32 @@ module shader_program (
    //  ROM Initialization (example instructions)
    initial begin
       // ADD r1, r2 -> r0
-      rom[0] = 32'b00_1111_000_001_010_00000000000000000; 
+      instruction_rom[0] = 32'b00_1111_000_001_010_00000000000000000; 
 
       // MUL r0, r3 -> r1
-      rom[1] = 32'b01_1111_001_000_011_00000000000000000;
+      instruction_rom[1] = 32'b01_1111_001_000_011_00000000000000000;
 
       // AND r3, r1 -> r2
-      rom[2] = 32'b10_1100_010_011_001_00000000000000000;
+      instruction_rom[2] = 32'b10_1100_010_011_001_00000000000000000;
 
       // OR r2, r0 -> r3
-      rom[3] = 32'b11_0101_011_010_000_00000000000000000;
+      instruction_rom[3] = 32'b11_0101_011_010_000_00000000000000000;
 
       //NOP (can be treated as all zeros)
-      rom[4] = 32'b0;
+      instruction_rom[4] = 32'b0;
 
       // Remaining slots empty (NOPs)
-      rom[5] = 32'b0;
-      rom[6] = 32'b0;
-      rom[7] = 32'b0;
-      rom[8] = 32'b0;
-      rom[9] = 32'b0;
-      rom[10] = 32'b0;
-      rom[11] = 32'b0;
-      rom[12] = 32'b0;
-      rom[13] = 32'b0;
-      rom[14] = 32'b0;
-      rom[15] = 32'b0;
+      instruction_rom[5] = 32'b0;
+      instruction_rom[6] = 32'b0;
+      instruction_rom[7] = 32'b0;
+      instruction_rom[8] = 32'b0;
+      instruction_rom[9] = 32'b0;
+      instruction_rom[10] = 32'b0;
+      instruction_rom[11] = 32'b0;
+      instruction_rom[12] = 32'b0;
+      instruction_rom[13] = 32'b0;
+      instruction_rom[14] = 32'b0;
+      instruction_rom[15] = 32'b0;
    end
 
    // Decode on positive clock edge
@@ -65,11 +65,11 @@ module shader_program (
          srcB <= 3'b000;
       end else begin
          // Fetch instruction from ROM
-         op <= rom[pc][31:30]; // ALU operation
-         mask <= rom[pc][29:26]; // Lane mask
-         dest <= rom[pc][25:23]; // Destination registers
-         srcA <= rom[pc][22:20]; // Source A register
-         srcB <= rom[pc][19:17]; // Source B register
+         op <= instruction_rom[pc][31:30]; // ALU operation
+         mask <= instruction_rom[pc][29:26]; // Lane mask
+         dest <= instruction_rom[pc][25:23]; // Destination registers
+         srcA <= instruction_rom[pc][22:20]; // Source A register
+         srcB <= instruction_rom[pc][19:17]; // Source B register
       end
    end
 endmodule
