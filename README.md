@@ -37,7 +37,7 @@ Register[1] = ...
 - `vector_register_file.v` – 8x32-bit register file
 - `shader_program.v` – ROM with hardcoded instructions
 - `shader_pipeline.v` – Full pipeline controller
-- - `top_level.v` - Top level design (incorporates everything)
+- `top_level.v` - Top level design (incorporates everything)
 - `top_level_tb.v` – Simulation testbench
 
 ## Waveform Output
