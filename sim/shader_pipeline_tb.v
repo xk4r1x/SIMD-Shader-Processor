@@ -2,10 +2,10 @@
 
 module shader_pipeline_tb (
       // Inputs
-      input clk,
-      input rst
+      reg clk,
+      reg rst
       
-      // Instanntiate the DUT 
+      //Instantiate the DUT 
       shader_pipeline dut (
          .clk(clk),
          .rst(rst)
@@ -14,7 +14,7 @@ module shader_pipeline_tb (
       // Clock generation: 10ns period (100 MHz)
       always #5 clk = ~clk;
 
-      inital begin
+      initial begin
          // Waveform dump for GTKWave
          $dumpfile("shader_pipeline_tb.vcd");
          $dumpvars(0, shader_pipeline_tb);
@@ -28,7 +28,7 @@ module shader_pipeline_tb (
          #10; // Wait for 10 ns
          rst = 0; // Release reset
 
-         // Run for a few instruction 
+         // Run for a few instructions 
          repeat (10) begin
             #10; // Wait for 10 ns
                $display("%0dns\tPC = %d", $time, dut.pc);
