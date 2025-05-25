@@ -37,10 +37,11 @@ Register[1] = ...
 - `vector_register_file.v` – 8x32-bit register file
 - `shader_program.v` – ROM with hardcoded instructions
 - `shader_pipeline.v` – Full pipeline controller
-- `shader_pipeline_tb.v` – Simulation testbench
+- - `top_level.v` - Top level design (incorporates everything)
+- `top_level_tb.v` – Simulation testbench
 
 ## Waveform Output
-Use GTKWave with `shader_pipeline_tb.vcd` to view simulation.
+Use GTKWave with `top_level_tb.vcd` to view the simulation.
 
 ## Author
 Makari Green  
